@@ -5,6 +5,12 @@ import sqlite3
                                                                                                                                        
 app = Flask(__name__)     
 
+@app.route('/somme/<int:valeur1>/<int:valeur2>')
+def somme(valeur1, valeur2):
+    resultat = valeur1 + valeur2
+    pair_ou_impair = "pair" if resultat % 2 == 0 else "impair"
+    return f"<h2>La somme de {valeur1} et {valeur2} est : {resultat} ({pair_ou_impair})</h2>"
+  
 @app.route('/calcul_carre/<int:val_user>')
 def carre(val_user):
     return "<h2>Le carré de votre valeur est : </h2>" + str(val_user * val_user)
