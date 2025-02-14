@@ -14,6 +14,16 @@ def somme(valeur1, valeur2):
     resultat = valeur1 + valeur2
     pair_ou_impair = "pair" if resultat % 2 == 0 else "impair"
     return f"<h2>La somme de {valeur1} et {valeur2} est : {resultat} ({pair_ou_impair})</h2>"
+
+@app.route('/somme/<valeurs>')
+def somme(valeurs):
+    try:
+        # Convertir les valeurs en une liste d'entiers
+        nombres = list(map(int, valeurs.split(',')))
+        resultat = sum(nombres)
+        return f"<h2>La somme des valeurs {nombres} est : {resultat}</h2>"
+    except ValueError:
+        return "<h2>Erreur : Assurez-vous d'entrer uniquement des nombres séparés par des virgules.</h2>"
   
 @app.route("/contact/")
 def MaPremiereAPI():
