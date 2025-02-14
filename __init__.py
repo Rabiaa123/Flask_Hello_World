@@ -66,6 +66,9 @@ def max_value():
             <button type="submit">Trouver la valeur maximale</button>
         </form>
     '''
+@app.route('/cv')
+def cv():
+    return render_template('cv.html')
                                                                                                                
 if __name__ == "__main__":
   app.run(debug=True)
