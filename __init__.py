@@ -24,6 +24,15 @@ def carre(val_user):
 @app.route('/exercices/')
 def exercices():
     return render_template('exercices.html') #Commentaire
+
+@app.route('/somme/<valeurs>')
+def somme(valeurs):
+    try:
+        nombres = list(map(int, valeurs.split(',')))
+        resultat = sum(nombres)
+        return f"<h2>La somme des valeurs {nombres} est : {resultat}</h2>"
+    except ValueError:
+        return "<h2>Erreur : Assurez-vous d'entrer uniquement des nombres séparés par des virgules.</h2>"
                                                                                                                
 if __name__ == "__main__":
   app.run(debug=True)
