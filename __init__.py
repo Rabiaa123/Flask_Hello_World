@@ -12,7 +12,7 @@ def carre(val_user):
 @app.route('/somme/<int:valeur1>/<int:valeur2>')
 def somme(valeur1, valeur2):
     resultat = valeur1 + valeur2
-    return "<h2>La somme de votre {veleur1} et {valeur2} est : </h2>" {resultat}valeur1 + valeur2)  
+    return f"<h2>La somme de votre {veleur1} et {valeur2} est : </h2> + str{resultat} "  
   
 @app.route("/contact/")
 def MaPremiereAPI():
