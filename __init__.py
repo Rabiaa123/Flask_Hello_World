@@ -5,9 +5,20 @@ import sqlite3
                                                                                                                                        
 app = Flask(__name__)     
   
-@app.route('/calcul_carre/<int:val_user>')
-def carre(val_user):
-    return "<h2>Le carré de votre valeur est : </h2>" + str(val_user * val_user)
+@app.route("/", methods=["GET", "POST"])
+def max_value():
+    max_val = None
+    numbers = []
+
+    if request.method == "POST":
+        try:
+            numbers = list(map(float, request.form.getlist("numbers")))
+            if numbers:
+                max_val = max(numbers)
+        except ValueError:
+            return "Veuillez entrer uniquement des nombres valides."
+
+    return render_template("index.html", max_val=max_val, numbers=numbers)
   
 @app.route("/contact/")
 def MaPremiereAPI():
