@@ -12,6 +12,12 @@ def carre(val_user):
 @app.route('/somme/<int:valeur1>/<int:valeur2>')
 def somme(valeur1, valeur2):
     return f"<h2>La somme de {valeur1} et {valeur2} est : {valeur1 + valeur2}</h2>"
+
+@app.route('/somme/<int:valeur1>/<int:valeur2>')
+def somme(valeur1, valeur2):
+    resultat = valeur1 + valeur2
+    pair_ou_impair = "pair" if resultat % 2 == 0 else "impair"
+    return f"<h2>La somme de {valeur1} et {valeur2} est : {resultat} ({pair_ou_impair})</h2>"
   
 @app.route("/contact/")
 def MaPremiereAPI():
