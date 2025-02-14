@@ -16,6 +16,10 @@ def exercices():
 @app.route("/contact/")
 def MaPremiereAPI():
     return render_template("contact.html")
+
+@app.route("/cnam/")
+def MaPremiereAPI1():
+    return render_template("cnam.html")
                                                                                                                
 if __name__ == "__main__":
   app.run(debug=True)
