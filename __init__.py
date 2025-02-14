@@ -4,7 +4,11 @@ from flask import json
 import sqlite3
                                                                                                                                        
 app = Flask(__name__)     
-    
+
+@app.route("/cnam/")
+def MaPremiereAPI1():
+    return render_template("cnam.html")
+  
 @app.route("/contact/")
 def MaPremiereAPI():
     return render_template("contact.html")
