@@ -44,6 +44,27 @@ def somme2(valeur1, valeur2):
     resultat = valeur1 + valeur2
     pair_ou_impair = "pair" if resultat % 2 == 0 else "impair"
     return f"<h2>La somme de {valeur1} et {valeur2} est : {resultat} ({pair_ou_impair})</h2>"
+
+@app.route('/max', methods=['GET', 'POST'])
+def max_value():
+    if request.method == 'POST':
+        valeurs = request.form.get('valeurs')
+        try:
+            nombres = list(map(int, valeurs.split(',')))
+            max_valeur = nombres[0]  # On suppose que le premier nombre est le plus grand
+            for nombre in nombres:
+                if nombre > max_valeur:
+                    max_valeur = nombre
+            return f"<h2>La valeur maximale parmi {nombres} est : {max_valeur}</h2>"
+        except ValueError:
+            return "<h2>Erreur : Veuillez entrer uniquement des nombres séparés par des virgules.</h2>"
+    return '''
+        <form method="post">
+            <label>Entrez des nombres séparés par des virgules :</label>
+            <input type="text" name="valeurs">
+            <button type="submit">Trouver la valeur maximale</button>
+        </form>
+    '''
                                                                                                                
 if __name__ == "__main__":
   app.run(debug=True)
