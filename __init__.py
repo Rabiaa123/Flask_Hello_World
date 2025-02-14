@@ -38,6 +38,12 @@ def addition(valeurs):
         return f"<h2>La somme des valeurs {nombres} est : {resultat}</h2>"
     except ValueError:
         return "<h2>Erreur : Assurez-vous d'entrer uniquement des nombres séparés par des virgules.</h2>"
+
+@app.route('/somme_pair_impaire/<int:valeur1>/<int:valeur2>')
+def somme2(valeur1, valeur2):
+    resultat = valeur1 + valeur2
+    pair_ou_impair = "pair" if resultat % 2 == 0 else "impair"
+    return f"<h2>La somme de {valeur1} et {valeur2} est : {resultat} ({pair_ou_impair})</h2>"
                                                                                                                
 if __name__ == "__main__":
   app.run(debug=True)
