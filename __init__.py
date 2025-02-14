@@ -12,6 +12,22 @@ def MaPremiereAPI1():
 @app.route("/contact/")
 def MaPremiereAPI():
     return render_template("contact.html")
+
+@app.route("/", methods=["GET", "POST"])
+def max_value():
+    max_val = None  # Initialisation de la valeur maximale
+    numbers = []
+
+    if request.method == "POST":
+        user_input = request.form["numbers"]
+        try:
+            numbers = list(map(float, user_input.split(",")))  # Convertir les valeurs
+            if numbers:
+                max_val = max(numbers)  # Trouver la valeur max
+        except ValueError:
+            return "Erreur : Veuillez entrer uniquement des nombres valides, séparés par des virgules."
+
+    return render_template("index.html", max_val=max_val, numbers=numbers)
   
 @app.route('/')
 def hello_world():
