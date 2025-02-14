@@ -9,15 +9,32 @@ app = Flask(__name__)
 def carre(val_user):
     return "<h2>Le carré de votre valeur est : </h2>" + str(val_user * val_user)
 
-@app.route('/somme/<valeurs>')
-def somme(valeurs):
-    try:
-        # Convertir les valeurs en une liste d'entiers
-        nombres = list(map(int, valeurs.split(',')))
-        resultat = sum(nombres)
-        return f"<h2>La somme des valeurs {nombres} est : {resultat}</h2>"
-    except ValueError:
-        return "<h2>Erreur : Assurez-vous d'entrer uniquement des nombres séparés par des virgules.</h2>"
+@app.route('/somme', methods=['GET', 'POST'])
+def somme():
+    if request.method == 'POST':
+        valeurs = request.form.get('valeurs')
+        try:
+            # Convertir la saisie en une liste d'entiers
+            nombres = list(map(int, valeurs.split(',')))
+            
+            # Calculer la somme avec une boucle
+            total = 0
+            for nombre in nombres:
+                total += nombre
+            
+            return f"<h2>La somme des valeurs {nombres} est : {total}</h2>"
+        except ValueError:
+            return "<h2>Erreur : Veuillez entrer uniquement des nombres séparés par des virgules.</h2>"
+
+    # Afficher le formulaire
+    return '''
+        <form method="post">
+            <label>Entrez des nombres séparés par des virgules :</label>
+            <input type="text" name="valeurs">
+            <button type="submit">Calculer</button>
+        </form>
+    '''
+
   
 @app.route("/contact/")
 def MaPremiereAPI():
