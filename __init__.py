@@ -30,7 +30,7 @@ def somme(valeur1, valeur2):
     result = valeur1 + valeur2
     return f"<h2>La somme de {valeur1} et {valeur2} est : {result}</h2>"
 
-@app.route('/somme2/<valeurs>')
+@app.route('/addition/<valeurs>')
 def somme(valeurs):
     try:
         nombres = list(map(int, valeurs.split(',')))
