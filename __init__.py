@@ -16,7 +16,7 @@ def exercices():
 
 @app.route('/TP1/')
 def exercices_tp1():
-    return render_template('TP1.html') 
+    return render_template('page1.html') 
   
 @app.route('/formulaire/')
 def exercice4():
