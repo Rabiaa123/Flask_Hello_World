@@ -18,6 +18,10 @@ def exercices():
 def exercice1():
     return render_template('1_Liste_Base.html')
 
+@app.route('/exercice_base2/')
+def exercice2():
+    return render_template('2_Liste_Base.html')
+
 @app.route("/contact/")
 def MaPremiereAPI():
     return render_template("contact.html")
