@@ -106,5 +106,52 @@
         </tr>
     </table>
 
+    
+    <h1>Formulaire d'inscription</h1>
+    <form action="#" method="post">
+        <!-- Pseudo -->
+        <label for="pseudo">Votre pseudo :</label>
+        <input type="text" id="pseudo" name="pseudo" required>
+
+        <!-- Mot de passe -->
+        <label for="password">Votre mot de passe :</label>
+        <input type="password" id="password" name="password" required>
+
+        <!-- Confirmation du mot de passe -->
+        <label for="confirm_password">Ressaisir votre mot de passe :</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+
+        <!-- OS préféré -->
+        <fieldset>
+            <legend>OS préféré :</legend>
+            <label><input type="radio" name="os" value="Windows XP"> Windows XP</label><br>
+            <label><input type="radio" name="os" value="Windows Vista"> Windows Vista</label><br>
+            <label><input type="radio" name="os" value="MacOS X"> MacOS X</label><br>
+            <label><input type="radio" name="os" value="Linux"> Linux</label><br>
+            <label><input type="radio" name="os" value="Autre"> Autre</label>
+        </fieldset>
+
+        <!-- Équipement possédé -->
+        <fieldset>
+            <legend>Vous possédez :</legend>
+            <label><input type="checkbox" name="equipment" value="Un ordinateur de bureau"> Un ordinateur de bureau</label><br>
+            <label><input type="checkbox" name="equipment" value="Un portable"> Un portable</label><br>
+            <label><input type="checkbox" name="equipment" value="Un netbook"> Un netbook</label><br>
+            <label><input type="checkbox" name="equipment" value="Une tablette (Pad)"> Une tablette (Pad)</label>
+        </fieldset>
+
+        <!-- Profession -->
+        <label for="profession">Votre profession :</label>
+        <select id="profession" name="profession">
+            <option value="Chômeur">Chômeur</option>
+            <option value="Etudiant">Etudiant</option>
+            <option value="Fonctionnaire">Fonctionnaire</option>
+            <option value="Privé">Privé</option>
+            <option value="Retraité">Retraité</option>
+        </select>
+
+        <!-- Bouton d'inscription -->
+        <input type="submit" value="S'inscrire !">
+    </form>
 </body>
 </html>
