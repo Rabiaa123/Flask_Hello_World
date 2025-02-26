@@ -22,6 +22,10 @@ def exercice1():
 def exercice2():
     return render_template('2_Liste_Base.html')
 
+@app.route('/exercice_base3/')
+def exercice3():
+    return render_template('3_Liste_Base.html')
+
 @app.route("/contact/")
 def MaPremiereAPI():
     return render_template("contact.html")
