@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau HTML</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Jour</th>
+        <td>Lundi</td>
+        <td>Mardi</td>
+    </tr>
+    <tr>
+        <th>Matin</th>
+        <td>Julie</td>
+        <td rowspan="2"></td> <!-- Fusion de la cellule sur 2 lignes -->
+    </tr>
+    <tr>
+        <th>Après-midi</th>
+        <td>Michel</td>
+        <td>Paul</td>
+    </tr>
+    <tr>
+        <th>Soir</th>
+        <td>Sandrine</td>
+        <td></td>
+    </tr>
+</table>
+
+</body>
+</html>
 
