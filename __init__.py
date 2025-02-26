@@ -13,6 +13,10 @@ def hello_world():
 @app.route('/exercices/')
 def exercices():
     return render_template('exercices.html') 
+  
+@app.route('/formulaire/')
+def exercice4():
+    return render_template('formulaire.html') 
 
 @app.route('/exercice_base1/')
 def exercice1():
