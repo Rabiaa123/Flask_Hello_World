@@ -50,19 +50,37 @@
     <li>item 3 :
     </li>
 </ol>	
+    
     <table>
+        <!-- Ligne 1 : En-têtes -->
         <tr>
-            <td >un tableau</td>
-            <td ></td>
-            <td ></td>
+            <th>un autre tableau</th>
+            <th></th>
+            <th></th>
+            <th></th>
         </tr>
+
+        <!-- Ligne 2 -->
         <tr>
-            <td ></td>
-            <td>à 6</td>
-            <td>cases</td>
+            <td rowspan="3"></td> <!-- Fusion verticale -->
+            <td></td>
+            <td rowspan="3"></td> <!-- Fusion verticale -->
+            <td></td>
+        </tr>
+
+        <!-- Ligne 3 -->
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <!-- Ligne 4 -->
+        <tr>
+            <td></td>
+            <td></td> <!-- Cellule vide pour équilibrer la structure -->
         </tr>
     </table>
-
+    
     <p>Une liste</p>
     <ol>
         <li>premier point
