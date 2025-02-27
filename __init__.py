@@ -17,6 +17,10 @@ def exercices():
 @app.route('/TP1/')
 def exercices_tp1():
     return render_template('page1.html') 
+
+@app.route('/maison/')
+def exercices_forme():
+    return render_template('Exemple_Base_SVG.html') 
   
 @app.route('/formulaire/')
 def exercice4():
