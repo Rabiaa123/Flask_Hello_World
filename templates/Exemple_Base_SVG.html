@@ -1,42 +1,89 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison dessinée à la main</title>
+    <style>
+        /* Style général pour le dessin */
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Conteneur SVG */
+        svg {
+            width: 400px;
+            height: 400px;
+        }
+
+        /* Effet de dessin à la main */
+        .hand-drawn {
+            stroke: black;
+            stroke-width: 2px;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 5, 5; /* Effet de ligne irrégulière */
+        }
+
+        /* Couleurs pour les éléments */
+        .roof {
+            stroke: brown;
+            fill: rgba(165, 42, 42, 0.3); /* Toit semi-transparent */
+        }
+
+        .walls {
+            stroke: black;
+            fill: rgba(245, 245, 220, 0.3); /* Murs semi-transparents */
+        }
+
+        .door {
+            stroke: darkbrown;
+            fill: rgba(101, 67, 33, 0.3); /* Porte semi-transparente */
+        }
+
+        .window {
+            stroke: blue;
+            fill: rgba(173, 216, 230, 0.3); /* Fenêtre semi-transparente */
+        }
+
+        .chimney {
+            stroke: red;
+            fill: rgba(255, 0, 0, 0.3); /* Cheminée semi-transparente */
+        }
+
+        .sun {
+            stroke: orange;
+            fill: rgba(255, 255, 0, 0.3); /* Soleil semi-transparent */
+        }
+    </style>
 </head>
 <body>
-    <svg width="400" height="400" style="background-color: white;">
-        <!-- Soleil qui sourit -->
-        <circle cx="50" cy="50" r="40" style="fill:yellow; stroke:orange; stroke-width:2;" />
-        <!-- Yeux du soleil -->
-        <circle cx="35" cy="40" r="5" style="fill:black;" />
-        <circle cx="65" cy="40" r="5" style="fill:black;" />
-        <!-- Sourire du soleil -->
-        <path d="M30 60 Q50 75 70 60" style="fill:none; stroke:black; stroke-width:2;" />
+    <svg>
+        <!-- Soleil -->
+        <circle class="hand-drawn sun" cx="50" cy="50" r="40" />
 
-        <!-- Toit de la maison -->
-        <polygon points="100,100 300,100 200,30" style="fill:brown; stroke:black; stroke-width:2;" />
+        <!-- Toit -->
+        <polygon class="hand-drawn roof" points="100,100 300,100 200,30" />
 
-        <!-- Murs de la maison -->
-        <rect x="100" y="100" width="200" height="200" style="fill:beige; stroke:black; stroke-width:2;" />
+        <!-- Murs -->
+        <rect class="hand-drawn walls" x="100" y="100" width="200" height="200" />
 
         <!-- Porte -->
-        <rect x="170" y="220" width="60" height="80" style="fill:darkbrown; stroke:black; stroke-width:2;" />
-        <!-- Poignée de la porte -->
-        <circle cx="220" cy="260" r="5" style="fill:gold;" />
+        <rect class="hand-drawn door" x="170" y="220" width="60" height="80" />
 
         <!-- Fenêtre -->
-        <rect x="130" y="130" width="60" height="60" style="fill:lightblue; stroke:black; stroke-width:2;" />
-        <line x1="160" y1="130" x2="160" y2="190" style="stroke:black; stroke-width:2;" />
-        <line x1="130" y1="160" x2="190" y2="160" style="stroke:black; stroke-width:2;" />
+        <rect class="hand-drawn window" x="130" y="130" width="60" height="60" />
+        <line class="hand-drawn window" x1="160" y1="130" x2="160" y2="190" />
+        <line class="hand-drawn window" x1="130" y1="160" x2="190" y2="160" />
 
-        <!-- Cheminée (déplacée à gauche) -->
-        <rect x="120" y="50" width="20" height="50" style="fill:red; stroke:black; stroke-width:2;" />
-        <!-- Fumée de la cheminée -->
-        <circle cx="130" cy="40" r="10" style="fill:rgba(200,200,200,0.7);" />
-        <circle cx="140" cy="30" r="12" style="fill:rgba(200,200,200,0.7);" />
-        <circle cx="130" cy="20" r="8" style="fill:rgba(200,200,200,0.7);" />
-
-        <!-- Herbe au sol -->
-        <rect x="0" y="300" width="400" height="100" style="fill:green;" />
+        <!-- Cheminée -->
+        <rect class="hand-drawn chimney" x="120" y="50" width="20" height="50" />
     </svg>
 </body>
 </html>
