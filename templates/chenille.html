@@ -34,3 +34,109 @@
     </svg>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chenille en HTML/CSS</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+
+        .chenille {
+            display: flex;
+            align-items: center;
+        }
+
+        .segment {
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            margin: 0 -10px;
+            position: relative;
+            animation: move 2s infinite alternate;
+        }
+
+        .segment::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .segment::after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 18px;
+            left: 18px;
+        }
+
+        .tete {
+            width: 60px;
+            height: 60px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            margin-right: -10px;
+            position: relative;
+            animation: move 2s infinite alternate;
+        }
+
+        .tete::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 15px;
+        }
+
+        .tete::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 23px;
+            left: 18px;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chenille">
+        <div class="tete"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+    </div>
+</body>
+</html>
