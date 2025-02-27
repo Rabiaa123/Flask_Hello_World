@@ -16,7 +16,7 @@ def exercices():
   
 @app.route('/vallet/')
 def exercices_svg():
-    return render_template('svg-cards.svg') 
+    return render_template('svg.html') 
   
 @app.route('/TP1/')
 def exercices_tp1():
