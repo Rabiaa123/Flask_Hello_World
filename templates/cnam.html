@@ -1,29 +1,35 @@
 <html>
 <head>
-
-    <style>
-        
+     <style>
         p {
-            color: blue; /* Couleur du texte en bleu */
+            color: blue;
         }
-
-        h2 {
-            background-color: yellow; /* Fond jaune */
+        .maclasse {
+            background-color: yellow;
+            padding: 10px;
+        }
+        #monid {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 20px;
         }
     </style>
 </head>
 <body>
-    <article>
-        <h1>Mon article</h1>
-        <section>
-            <h2>Première section</h2>
-            <p>Premier paragraphe</p>
-        </section>
-        <section>
-            <h2>Deuxième section</h2>
-            <p>Deuxième paragraphe</p>
-            <p>Troisième paragraphe</p>
-        </section>
-    </article>
+    <section>
+    	<h1>Mon titre 1</h1>
+    	<article>
+    		<h2>Mon Titre 2</h2>
+    		<p>Premier paragraphe</p>
+    		<p class="maclasse">Deuxième paragraphe</p>
+    		<p>Troisième paragraphe</p>
+    		<p id="monid">Quatrième paragraphe</p>
+    	</article>
+    	<article>
+    		<h2 class="maclasse">Mon Titre 3</h2>
+    		<p id="superid" class="maclasse">Cinquième paragraphe</p>
+    		<p>Sixième paragraphe</p>
+    	</article>
+    </section>
 </body>
 </html>
