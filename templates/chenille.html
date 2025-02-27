@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chenille en SVG</title>
+</head>
+<body>
+    <svg width="500" height="200">
+        <!-- Corps de la chenille -->
+        <circle cx="50" cy="100" r="30" fill="green" />
+        <circle cx="100" cy="110" r="30" fill="lightgreen" />
+        <circle cx="150" cy="100" r="30" fill="green" />
+        <circle cx="200" cy="110" r="30" fill="lightgreen" />
+        <circle cx="250" cy="100" r="30" fill="green" />
+        <circle cx="300" cy="110" r="30" fill="lightgreen" />
+        <circle cx="350" cy="100" r="30" fill="green" />
+        
+        <!-- Tête de la chenille -->
+        <circle cx="400" cy="100" r="35" fill="lightgreen" stroke="black" stroke-width="2" />
+        
+        <!-- Yeux -->
+        <circle cx="390" cy="90" r="5" fill="black" />
+        <circle cx="410" cy="90" r="5" fill="black" />
+        
+        <!-- Bouche -->
+        <path d="M 390 110 Q 400 120 410 110" stroke="black" stroke-width="2" fill="transparent" />
+        
+        <!-- Antennes -->
+        <line x1="385" y1="70" x2="375" y2="50" stroke="black" stroke-width="2" />
+        <line x1="415" y1="70" x2="425" y2="50" stroke="black" stroke-width="2" />
+        <circle cx="375" cy="50" r="5" fill="black" />
+        <circle cx="425" cy="50" r="5" fill="black" />
+    </svg>
+</body>
+</html>
