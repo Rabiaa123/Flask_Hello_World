@@ -2,55 +2,32 @@
 <head>
     <title>Exercice CSS</title>
     <style>
-        html {background-color: black}
-		#Madiv1{color:white;
-		        background-color: green;
-				position: absolute;
-				left:25px;
-				top:25px;
-				widht:150px;
-				height:150px;
-				}
-	    	#Madiv2{color:white;
-		        background-color: orange;
-				position: absolute;
-				right:25px;
-				top:25px;
-				widht:150px;
-				height:150px;
-				}
-	    	#Madiv3{color:white;
-		        background-color: blue;
-				position: absolute;
-				right:25px;
-				down:25px;
-				widht:150px;
-				height:150px;
-				}
-	    	#Madiv4{color:white;
-		        background-color: red;
-				position: absolute;
-				left:25px;
-				down:25px;
-				widht:150px;
-				height:150px;
-				}
+        html { 
+            background-color: black;
+            height: 100vh;
+        }
+
+        /* Style commun aux div */
+        div {
+            color: white;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            font-weight: bold;
+            position: absolute;
+        }
+
+        /* Positionnement des blocs */
+        #Madiv1 { background-color: green; left: 25px; top: 25px; }
+        #Madiv2 { background-color: orange; right: 25px; top: 25px; }
+        #Madiv3 { background-color: blue; right: 25px; bottom: 25px; }
+        #Madiv4 { background-color: red; left: 25px; bottom: 25px; }
     </style>
 </head>
 <body>
     <header>
         <div id="Madiv1">En haut à gauche</div>
-        <div id="Madiv2">En haut à droite</div>
-        <div id="Madiv3">En bas à droite</div>
-        <div id="Madiv4">En bas à gauche</div>
-    </header>
-</body>
-</html>
-    </style>
-</head>
-<body>
-    <header>
-	<div id="Madiv1">En haut à gauche</div>
         <div id="Madiv2">En haut à droite</div>
         <div id="Madiv3">En bas à droite</div>
         <div id="Madiv4">En bas à gauche</div>
