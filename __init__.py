@@ -13,6 +13,10 @@ def hello_world():
 @app.route('/exercices/')
 def exercices():
     return render_template('exercices.html') 
+
+@app.route('/carre/')
+def carre_css():
+    return render_template('CSS_Carre.html') 
   
 @app.route('/vallet/')
 def exercices_svg():
