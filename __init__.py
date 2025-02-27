@@ -13,7 +13,11 @@ def hello_world():
 @app.route('/exercices/')
 def exercices():
     return render_template('exercices.html') 
-
+  
+@app.route('/vallet/')
+def exercices_svg():
+    return render_template('svg-cards.html') 
+  
 @app.route('/TP1/')
 def exercices_tp1():
     return render_template('page1.html') 
