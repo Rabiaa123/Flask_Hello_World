@@ -1,24 +1,24 @@
 <html>
 <head>
-<title>Mon Exercice JS N°2</title>
-<script>
+	<title>Mon Exercice JS N°2</title>
+	<script>
+		function afficher() {
+            		var saisie = parseInt(document.getElementById('V1').value);
+           		var resultat = "";	
+            
+            		for (var j = 0; j < saisie; j++) {
+	                	for (var k = 0; k < saisie - j - 1; k++) {
+                    			resultat += "&nbsp;";
+				}
+                		for (var i = 0; i < j + 1; i++) {
+                    			resultat += "*";
+                		}
+                		resultat += "<br>";
+            		}
+            		document.getElementById('result').innerHTML = resultat;
+        	}
 
-function afficher(){
-	var saisie = parseInt(document.getElementById('V1').value);
-	var resultat = "";	
-	for (var j = 0; j < saisie; j++) {
-        	for (var k = 0; k < saisie - j - 1; k++) {
-                        resultat += " ";
-                }
-        	for (var i = 0; i < j + 1; i++) {
-                        resultat += "*";
-                }
-        	resultat += "<br>";
-        }	
-	document.getElementById('result').innerHTML = resultat;
-}
-
-</script>
+	</script>
 
 </head>
 <body>
