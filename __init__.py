@@ -77,7 +77,7 @@ def carre():
 
 @app.route('/etoiles/')
 def etoiles():
-    return render_template('carre_etoiles.html')
+    return render_template('Carre_Etoiles.html')
                                                                                                                
 if __name__ == "__main__":
   app.run(debug=True)
