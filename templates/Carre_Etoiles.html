@@ -6,20 +6,11 @@
         function afficher() {
             var saisie = parseInt(document.getElementById('V1').value);
             var resultat = "";  
-            
             for (var j = 0; j < saisie; j++) {
-                // Ajout des espaces pour l'alignement à droite
-                for (var k = 0; k < saisie - j - 1; k++) {
-                    resultat += "&nbsp;";
-                }
-                // Ajout des étoiles
-                for (var i = 0; i < j + 1; i++) {
-                    resultat += "*";
-                }
-                // Saut de ligne après chaque ligne
-                resultat += "<br>";
-            }
-            
+              for (var i = 0; i < j+1; i++) {
+                resultat += "*"; 
+              }
+            } 
             document.getElementById('result').innerHTML = resultat;
         }
   </script>
