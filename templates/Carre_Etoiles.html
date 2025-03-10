@@ -8,10 +8,10 @@
             
             		for (var j = 0; j < saisie; j++) {
 	                	for (var k = 0; k < saisie - j - 1; k++) {
-                    			resultat += " ";
-				}
-                		for (var i = 0; i < j + 1; i++) {
-                    			resultat += "*";
+                    				resultat += " ";
+                			for (var i = 0; i < j + 1; i++) {
+                    				resultat += "*";
+					}
                 		}
             		}
             		document.getElementById('result').innerHTML = resultat;
