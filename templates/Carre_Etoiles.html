@@ -9,15 +9,17 @@ function afficher(){
 	var resultat = "";	
 		
 	for (var j = 0; j < saisie; j++) {
-
-        	for (var k = 0; k < saisie - j; k++) {
-            		resultat += "&nbsp;"; // Utilisation de &nbsp; pour les espaces en HTML
+        // Ajout des espaces
+        	for (var k = 0; k < saisie - j - 1; k++) {
+            		resultat += "&nbsp;";
         	}
-        	for (var i = 0; i <= j; i++) {   
-			resultat += "*";
-        	}
-        	resultat += "</br>";
-	}
+        // Ajout des étoiles
+        	for (var i = 0; i <= j; i++) {
+            		resultat += "*";
+       		}
+        // Ajouter un saut de ligne après chaque ligne du triangle
+        resultat += "<br>";
+    }
 	document.getElementById('result').innerHTML = resultat;
 
 }
