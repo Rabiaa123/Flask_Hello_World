@@ -8,12 +8,13 @@ function afficher(){
 	var saisie = parseInt(document.getElementById('V1').value);
 	var resultat = "";	
 		
-	for (j=saisie; j>=1 ; j--){
-        for (i=0; i<j ; i++){
-                resultat += "*";
-	for (k=0; i<j ; i++){
-                resultat += " ";
+	for (var j = 1; j <= saisie; j++) {
+
+        for (var k = 0; k < saisie - j; k++) {
+            resultat += "&nbsp;"; // Utilisation de &nbsp; pour les espaces en HTML
         }
+        for (var i = 0; i < j; i++) {
+            resultat += "*";
                 resultat += "</br>";
         }
 	
