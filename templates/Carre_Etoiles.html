@@ -10,16 +10,12 @@ function afficher(){
 		
 	for (var j = 0; j < saisie; j++) {
         // Ajout des espaces
-        	for (var k = 0; k < saisie - j - 1; k++) {
+        	for (var k = 0; k < saisie - j - 1; k++) 
             		resultat += " ";
-        	}
-        // Ajout des étoiles
-        	for (var i = 0; i <= j; i++) {
+        	for (var i = 0; i <= j; i++) 
             		resultat += "*";
-       		}
-        // Ajouter un saut de ligne après chaque ligne du triangle
-        resultat += "<br>";
-    }
+        	resultat += "<br>";
+    	}
 	document.getElementById('result').innerHTML = resultat;
 
 }
