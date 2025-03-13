@@ -2,10 +2,10 @@
 <html>
   <head>
     <script>
-      let balles = 0; // Nombre de pastilles rouges sélectionnées
-      const maxBalles = 3; // Nombre maximum de pastilles rouges
-      let chambreBleue = null; // Chambre sélectionnée pour la pastille bleue
-      let gains = 0; // Gains cumulés
+      let balles = 0;
+      const maxBalles = 3;
+      let chambreBleue = null;
+      let gains = 0;
 
       // Fonction pour sélectionner/désélectionner les chambres
       function fct2(id) {
@@ -17,8 +17,6 @@
           chambre.style.fill = "gray"; // Désélectionner la chambre
           balles--;
         }
-
-        // Mettre à jour le statut des chambres sélectionnées
         document.getElementById("status").innerText =
           "Chambres sélectionnées : " + balles + "/3";
       }
@@ -27,15 +25,14 @@
       function choisirChambreBleue() {
         let choixPossible = [];
         for (let i = 1; i <= 6; i++) {
-          let chambre = document.getElementById("Br" + i);
-          choixPossible.push(i); // Ajouter toutes les chambres, peu importe leur couleur
+          choixPossible.push(i);
         }
 
         if (choixPossible.length > 0) {
           chambreBleue =
-            choixPossible[Math.floor(Math.random() * choixPossible.length)]; // Choisir une chambre aléatoirement
+            choixPossible[Math.floor(Math.random() * choixPossible.length)];
           let chambre = document.getElementById("Br" + chambreBleue);
-          chambre.style.fill = "blue"; // Colorer la chambre en bleu
+          chambre.style.fill = "blue"; // Colorier la chambre en bleu
         }
       }
 
@@ -52,15 +49,17 @@
         choisirChambreBleue();
 
         let selectedChamber = document.getElementById("Br" + chambreBleue);
+        let gain = [0, 10000, 100000, 1000000][balles];
 
         // Vérifier si la pastille bleue est sur une chambre rouge
         if (selectedChamber.style.fill === "red") {
-          gains -= 5000; // Décrémenter les gains en cas de pastille bleue sur une chambre rouge
+          gains -= gain; // Décrémenter les gains en cas de pastille bleue sur une chambre rouge
           alert(
-            "La pastille bleue est sur une chambre rouge. Vous avez perdu 5000 € !"
+            "La pastille bleue est sur une chambre rouge. Vous avez perdu " +
+              gain.toLocaleString() +
+              " € !"
           );
         } else {
-          let gain = [0, 10000, 100000, 1000000][balles]; // Calculer les gains en fonction du nombre de balles
           gains += gain; // Cumuler les gains
           alert(
             "La pastille bleue est sur une chambre grise. Vous avez gagné " +
@@ -82,7 +81,7 @@
         balles = 0;
         chambreBleue = null;
         for (let i = 1; i <= 6; i++) {
-          document.getElementById("Br" + i).style.fill = "gray";
+          document.getElementById("Br" + i).style.fill = "gray"; // Remettre toutes les chambres en gris
         }
         document.getElementById("status").innerText =
           "Chambres sélectionnées : 0/3";
@@ -110,7 +109,7 @@
         r="25"
         stroke="black"
         stroke-width="3"
-        fill="gray"
+        style="fill: gray"
       />
       <circle
         onclick="fct2(2)"
@@ -120,7 +119,7 @@
         r="25"
         stroke="black"
         stroke-width="3"
-        fill="gray"
+        style="fill: gray"
       />
       <circle
         onclick="fct2(3)"
@@ -130,7 +129,7 @@
         r="25"
         stroke="black"
         stroke-width="3"
-        fill="gray"
+        style="fill: gray"
       />
       <circle
         onclick="fct2(4)"
@@ -140,7 +139,7 @@
         r="25"
         stroke="black"
         stroke-width="3"
-        fill="gray"
+        style="fill: gray"
       />
       <circle
         onclick="fct2(5)"
@@ -150,7 +149,7 @@
         r="25"
         stroke="black"
         stroke-width="3"
-        fill="gray"
+        style="fill: gray"
       />
       <circle
         onclick="fct2(6)"
@@ -160,7 +159,7 @@
         r="25"
         stroke="black"
         stroke-width="3"
-        fill="gray"
+        style="fill: gray"
       />
       <circle
         cx="100"
