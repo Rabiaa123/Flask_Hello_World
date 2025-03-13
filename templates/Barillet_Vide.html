@@ -2,13 +2,25 @@
   <head>
     <meta charset="UTF-8" />
     <script>
+      function fct2(id) {
+        document.getElementById("Br" + id).style.fill = "red";
+      }
+
       function lancer() {
-        let chiffreAleatoire = Math.floor(Math.random() * 6) + 1;
-        alert(
-          "Le barillet tourne, la chambre selectionnée pour vous est le numéro " +
-            chiffreAleatoire +
-            " Nous vous souhaitons un bon séjour"
-        );
+        var Val = Math.floor(Math.random() * 6 + 1);
+        var selectedChamber = document.getElementById("Br" + Val);
+
+        if (selectedChamber.style.fill === "red") {
+          alert(
+            "Le chiffre choisi est : " +
+              Val +
+              "\n oups... Pas de chance, Vous avez perdu !"
+          );
+        } else {
+          alert(
+            "Le chiffre choisi est : " + Val + "\n Bravo, Vous avez gagné !"
+          );
+        }
       }
     </script>
   </head>
@@ -24,6 +36,7 @@
         fill="none"
       />
       <circle
+        onclick="fct2(1)"
         id="Br1"
         cx="100"
         cy="40"
@@ -31,9 +44,9 @@
         stroke="black"
         stroke-width="3"
         fill="gray"
-        onclick="afficherMessage(1)"
       />
       <circle
+        onclick="fct2(2)"
         id="Br2"
         cx="150"
         cy="70"
@@ -41,9 +54,9 @@
         stroke="black"
         stroke-width="3"
         fill="gray"
-        onclick="afficherMessage(2)"
       />
       <circle
+        onclick="fct2(3)"
         id="Br3"
         cx="50"
         cy="70"
@@ -51,9 +64,9 @@
         stroke="black"
         stroke-width="3"
         fill="gray"
-        onclick="afficherMessage(3)"
       />
       <circle
+        onclick="fct2(4)"
         id="Br4"
         cx="50"
         cy="130"
@@ -61,9 +74,9 @@
         stroke="black"
         stroke-width="3"
         fill="gray"
-        onclick="afficherMessage(4)"
       />
       <circle
+        onclick="fct2(5)"
         id="Br5"
         cx="150"
         cy="130"
@@ -71,9 +84,9 @@
         stroke="black"
         stroke-width="3"
         fill="gray"
-        onclick="afficherMessage(5)"
       />
       <circle
+        onclick="fct2(6)"
         id="Br6"
         cx="100"
         cy="160"
@@ -81,7 +94,6 @@
         stroke="black"
         stroke-width="3"
         fill="gray"
-        onclick="afficherMessage(6)"
       />
       <circle
         cx="100"
