@@ -6,7 +6,7 @@ import sqlite3
                                                                                                                                        
 app = Flask(__name__)     
 
-@app.route('/roulette_russe/')
+@app.route('/russe/')
 def exercices_java_4():
     return render_template('Barillet_Vide.html') 
 
