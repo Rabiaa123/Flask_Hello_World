@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      let balles = 0; // Nombre de pastilles rouges sélectionnées
+      const maxBalles = 3; // Nombre maximum de pastilles rouges
+      let chambreBleue = null; // Chambre sélectionnée pour la pastille bleue
+      let gains = 0; // Gains cumulés
+
+      // Fonction pour sélectionner/désélectionner les chambres
+      function fct2(id) {
+        let chambre = document.getElementById("Br" + id);
+        if (chambre.style.fill !== "red" && balles < maxBalles) {
+          chambre.style.fill = "red"; // Marquer la chambre comme rouge
+          balles++;
+        } else if (chambre.style.fill === "red") {
+          chambre.style.fill = "gray"; // Désélectionner la chambre
+          balles--;
+        }
+
+        // Mettre à jour le statut des chambres sélectionnées
+        document.getElementById("status").innerText =
+          "Chambres sélectionnées : " + balles + "/3";
+      }
+
+      // Fonction pour choisir une chambre bleue aléatoirement
+      function choisirChambreBleue() {
+        let choixPossible = [];
+        for (let i = 1; i <= 6; i++) {
+          let chambre = document.getElementById("Br" + i);
+          choixPossible.push(i); // Ajouter toutes les chambres, peu importe leur couleur
+        }
+
+        if (choixPossible.length > 0) {
+          chambreBleue =
+            choixPossible[Math.floor(Math.random() * choixPossible.length)]; // Choisir une chambre aléatoirement
+          let chambre = document.getElementById("Br" + chambreBleue);
+          chambre.style.fill = "blue"; // Colorer la chambre en bleu
+        }
+      }
+
+      // Fonction pour lancer le jeu
+      function lancer() {
+        if (balles < 1 || balles > maxBalles) {
+          alert(
+            "Veuillez sélectionner entre 1 et 3 chambres pour pouvoir jouer."
+          );
+          return;
+        }
+
+        // Choisir une chambre bleue aléatoirement
+        choisirChambreBleue();
+
+        let selectedChamber = document.getElementById("Br" + chambreBleue);
+
+        // Vérifier si la pastille bleue est sur une chambre rouge
+        if (selectedChamber.style.fill === "red") {
+          gains -= 5000; // Décrémenter les gains en cas de pastille bleue sur une chambre rouge
+          alert(
+            "La pastille bleue est sur une chambre rouge. Vous avez perdu 5000 € !"
+          );
+        } else {
+          let gain = [0, 10000, 100000, 1000000][balles]; // Calculer les gains en fonction du nombre de balles
+          gains += gain; // Cumuler les gains
+          alert(
+            "La pastille bleue est sur une chambre grise. Vous avez gagné " +
+              gain.toLocaleString() +
+              " € !"
+          );
+        }
+
+        // Mettre à jour les gains cumulés
+        document.getElementById("gains").innerText =
+          "Gains cumulés : " + gains.toLocaleString() + " €";
+
+        // Réinitialiser le jeu pour une nouvelle partie
+        reinitialiserJeu();
+      }
+
+      // Fonction pour réinitialiser le jeu
+      function reinitialiserJeu() {
+        balles = 0;
+        chambreBleue = null;
+        for (let i = 1; i <= 6; i++) {
+          document.getElementById("Br" + i).style.fill = "gray";
+        }
+        document.getElementById("status").innerText =
+          "Chambres sélectionnées : 0/3";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Roulette Russe</h1>
+    <p id="status">Chambres sélectionnées : 0/3</p>
+    <p id="gains">Gains cumulés : 0 €</p>
+    <svg width="200" height="200" style="background-color: antiquewhite">
+      <circle
+        cx="100"
+        cy="100"
+        r="95"
+        stroke="black"
+        stroke-width="3"
+        fill="none"
+      />
+      <circle
+        onclick="fct2(1)"
+        id="Br1"
+        cx="100"
+        cy="40"
+        r="25"
+        stroke="black"
+        stroke-width="3"
+        fill="gray"
+      />
+      <circle
+        onclick="fct2(2)"
+        id="Br2"
+        cx="150"
+        cy="70"
+        r="25"
+        stroke="black"
+        stroke-width="3"
+        fill="gray"
+      />
+      <circle
+        onclick="fct2(3)"
+        id="Br3"
+        cx="50"
+        cy="70"
+        r="25"
+        stroke="black"
+        stroke-width="3"
+        fill="gray"
+      />
+      <circle
+        onclick="fct2(4)"
+        id="Br4"
+        cx="50"
+        cy="130"
+        r="25"
+        stroke="black"
+        stroke-width="3"
+        fill="gray"
+      />
+      <circle
+        onclick="fct2(5)"
+        id="Br5"
+        cx="150"
+        cy="130"
+        r="25"
+        stroke="black"
+        stroke-width="3"
+        fill="gray"
+      />
+      <circle
+        onclick="fct2(6)"
+        id="Br6"
+        cx="100"
+        cy="160"
+        r="25"
+        stroke="black"
+        stroke-width="3"
+        fill="gray"
+      />
+      <circle
+        cx="100"
+        cy="100"
+        r="10"
+        stroke="black"
+        stroke-width="3"
+        fill="black"
+      />
+    </svg>
+    <button onclick="lancer()">Jouer</button>
+  </body>
+</html>
